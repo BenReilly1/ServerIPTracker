@@ -8,7 +8,6 @@ const Nexmo = require('nexmo');
 
 publicIp.v4().then(ip => {
     var newip = ip;
-    // var newip = '192.167.12.4'
     logIPChanges(newip)
 });
 
