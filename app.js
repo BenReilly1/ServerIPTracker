@@ -12,8 +12,8 @@ publicIp.v4().then(ip => {
 });
 
 function logIPChanges(newip) {
-    if (fs.existsSync('./ip.txt')) {
-        fs.readFile('./ip.txt', 'utf8', function(err, contents) {
+    if (fs.existsSync('C:\\Users\\Public\\ip.txt')) {
+        fs.readFile('C:\\Users\\Public\\ip.txt', 'utf8', function(err, contents) {
             if (contents === newip) {
                 process.exit()
             } else {
@@ -30,7 +30,7 @@ function logIPChanges(newip) {
 }
 
 function DifferentIP(newip, loggedip) {
-    fs.writeFile('./ip.txt', newip, function (err) {
+    fs.writeFile('C:\\Users\\Public\\ip.txt', newip, function (err) {
         if (err) throw err;
         uTorrentCheck(newip)
     });
